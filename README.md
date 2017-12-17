@@ -41,3 +41,6 @@ selected | the same
 selectCallback | triggered callback function
 confirmSelect | receive one parameter
 cancelSelect | close select
+
+## Performance
+![demo](./src/assets/demo.png)
