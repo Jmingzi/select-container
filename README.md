@@ -14,14 +14,14 @@ $ npm install select-container --save
 ## How to use
 ```html
 <template>
-  <city-select
+  <select-container
     v-if="showSelect"
     :cascadeData="cascadeData"
     :selected="selected"
     @selectCallback="handleSelect"
     @confirmSelect="confirmSelect"
     @cancelSelect="cancelSelect">
-  </city-select>
+  </select-container>
 </template>
 
 <script>
