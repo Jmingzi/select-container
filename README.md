@@ -1,5 +1,11 @@
 A cascaded or non cascade selection or picker container with Vue.js, which does not support PC
 
+<p>
+  <a href="https://www.npmjs.com/package/select-container"><img src="https://img.shields.io/npm/dm/select-container.svg" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/select-container"><img src="https://img.shields.io/npm/v/select-container.svg" alt="Version"></a>
+</p>
+  
+
 ## Install
 ```
 $ npm install select-container --save
@@ -8,14 +14,14 @@ $ npm install select-container --save
 ## How to use
 ```html
 <template>
-  <city-select
+  <select-container
     v-if="showSelect"
     :cascadeData="cascadeData"
     :selected="selected"
     @selectCallback="handleSelect"
     @confirmSelect="confirmSelect"
     @cancelSelect="cancelSelect">
-  </city-select>
+  </select-container>
 </template>
 
 <script>
@@ -27,6 +33,9 @@ export default {
       cascadeData: [],
       selected: []
     }
+  },
+  components: {
+    SelectContainer
   }
 }
 </script>
