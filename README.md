@@ -1,4 +1,4 @@
-A cascade selection container with Vue in webApp
+A cascaded or non cascade selection or picker container with Vue.js, which does not support PC
 
 ## Install
 ```
