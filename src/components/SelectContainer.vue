@@ -34,8 +34,11 @@
   export default {
     data () {
       return {
+        // 每一行高度
         itemHeight: 0,
+        // 共有多少级
         itemElem: [],
+        // 选择的结果
         selectResult: []
       }
     },
@@ -57,6 +60,7 @@
       this.getItemElem()
       this.itemHeight = this.$refs.line.offsetHeight
       if (this.selected.length > 0) {
+        // 初始化已选择
         this.selected.forEach((item, level) => {
           let index = this.cascadeData[level].findIndex(x => x.code === item.code)
           this.scrollTo(level, index)
@@ -125,11 +129,18 @@
       getItemElem () {
         this.itemElem = document.querySelectorAll('.select-item')
       },
+      // 每一列滚动至
+      // @params level {Number} 第几列
+      // @params index {Number} 第几条数据对应的数组下标
+      // @returns
       scrollTo (level, index = 0) {
         let translateY = -index * this.itemHeight
         this.itemElem[level].childNodes[0].style.transform = `translateY(${translateY}px)`
         this.select(index, level)
       },
+      // 重置滚动值
+      // @params index {Number} 从第几级开始
+      // @returns
       resetTransForm (index) {
         Array.from(this.itemElem).forEach((item, i) => {
           if (i > index) {
@@ -137,9 +148,10 @@
           }
         })
       },
-      // touchend时的回调，获取当前定位的值
-      // @param index {Number} 当前值的下标
-      // @param level {Number} 指令修饰符的值
+      // 每次touchend后的选择回调
+      // @params index {Number} 对应数据的数组下标
+      // @params level {Number} 第几级
+      // @returns
       select (index, level) {
         this.resetTransForm(level)
         this.$set(this.selectResult, level, this.cascadeData[level][index])
