@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "A Vue.js cascade select container, city select, time select, date select and etc.",
   "author": "yangming <472102644@qq.com>",
-  "main": "src/components/SelectContainer.vue",
+  "main": "./m-dist/selectContainer.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "npm run dev",

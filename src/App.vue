@@ -14,7 +14,8 @@
 </template>
 
 <script>
-import CitySelect from './components/SelectContainer'
+// import CitySelect from './components/SelectContainer'
+import CitySelect from '../m-dist/selectContainer'
 import {
   firstLevelData,
   secondLevelData,
